@@ -339,4 +339,7 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+# Ignore 
+00-spring-boot-full-course/
+
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,visualstudiocode,eclipse,macos,windows,linux,maven,gradle
