@@ -1,4 +1,4 @@
-package com.dacm.springcoredemo;
+package com.dacm.springcoredemo.common;
 
 public interface Coach {
 
