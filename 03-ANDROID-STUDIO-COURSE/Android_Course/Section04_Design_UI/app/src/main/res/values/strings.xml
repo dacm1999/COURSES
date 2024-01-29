@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Seccion1_CursoAndroid</string>
+    <string name="app_name2">Android course - section 4</string>
+    <string name="btnExplicit">Explicit</string>
+    <string name="btnImplicit">implicit</string>
+    <string name="txfPhone">Telefono</string>
+    <string name="empty"></string>
+</resources>

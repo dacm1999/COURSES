@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/add_item"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Add item"
+        app:showAsAction="ifRoom" />
+
+    <group
+        android:background="@color/white"
+        android:textColor="@color/black">
+
+        <item
+            android:id="@+id/settings_item"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:title="Settings" />
+        <item
+            android:id="@+id/group_item_1"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:title="Salir" />
+    </group>
+
+</menu>
+
