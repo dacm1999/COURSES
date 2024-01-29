@@ -1,17 +1,16 @@
 package com.dacm.springcoredemo.common;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
-public class BaseballCoach implements Coach{
 
-    public BaseballCoach() {
+public class SwimCoach implements Coach {
+
+    public SwimCoach() {
         System.out.println("In constructor: " + getClass().getSimpleName());
     }
 
     @Override
     public String getDailyWorkout() {
-        return "Spend 30 minutes in batting practice";
+        return "Swim 1000 meters as a warm up";
     }
 }

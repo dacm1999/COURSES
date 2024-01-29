@@ -13,7 +13,7 @@ public class DemoController {
 
     private Coach myCoach; // define a private field for the dependency
 
-    public DemoController(@Qualifier(value = "cricketCoach") Coach myCoach) {
+    public DemoController(@Qualifier("aquatic") Coach myCoach) {
         System.out.println("In constrcutor: " + getClass().getSimpleName());
         this.myCoach = myCoach;
     }
