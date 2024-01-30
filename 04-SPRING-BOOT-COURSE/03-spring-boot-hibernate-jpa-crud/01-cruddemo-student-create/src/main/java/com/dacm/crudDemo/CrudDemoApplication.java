@@ -19,8 +19,8 @@ public class CrudDemoApplication {
 
 
 		return runner -> {
-//			createStudent(studentDAO);
-			createMultipleStudents(studentDAO);
+			createStudent(studentDAO);
+//			createMultipleStudents(studentDAO);
 
 		};
 	}
@@ -28,7 +28,7 @@ public class CrudDemoApplication {
 	private void createStudent(StudentDAO studentDAO) {
 		//Creating a new student
 		System.out.println("Creating a new student object...");
-		Student tempStuden = new Student("Daniel","Contreras", "danielcontreras@mail.conm");
+		Student tempStuden = new Student("Pepe","Contreras", "pepecontreras@mail.conm");
 		//Save the object
 		System.out.println("Saving the student");
 		studentDAO.save(tempStuden);
