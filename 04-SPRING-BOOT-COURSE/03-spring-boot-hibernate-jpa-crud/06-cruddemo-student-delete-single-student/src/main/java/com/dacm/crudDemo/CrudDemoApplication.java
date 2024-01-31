@@ -22,7 +22,7 @@ public class CrudDemoApplication {
 
 		return runner -> {
 //			createStudent(studentDAO);
-//			createMultipleStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 //			readStudent(studentDAO);
 //			quearyForStudent(studentDAO);
 //			quearyForStudentByFirstName(studentDAO);
@@ -32,12 +32,9 @@ public class CrudDemoApplication {
 	}
 
 	private void deleteStudent(StudentDAO studentDAO) {
-
 		int studentId = 1;
 		System.out.println("Deleting student id: " + studentId);
 		studentDAO.delete(studentId);
-		
-
 	}
 
 	private void updateStudent(StudentDAO studentDAO) {
