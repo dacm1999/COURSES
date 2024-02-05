@@ -56,7 +56,6 @@ public class EmployeeDAOJpaImp implements EmployeeDAO {
 
     @Override
     public void deleteById(int userID) {
-
         //fin employee by id
         Employee theEmployee = entityManager.find(Employee.class, userID);
         entityManager.remove(theEmployee);
