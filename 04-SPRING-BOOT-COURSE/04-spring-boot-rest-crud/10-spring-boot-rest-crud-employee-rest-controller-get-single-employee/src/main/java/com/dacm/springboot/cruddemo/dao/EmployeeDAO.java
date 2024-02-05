@@ -1,15 +1,14 @@
-package com.dacm.springboot.cruddemo.service;
+package com.dacm.springboot.cruddemo.dao;
 
-import com.dacm.springboot.cruddemo.dao.EmployeeDAO;
 import com.dacm.springboot.cruddemo.entity.Employee;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface EmployeeService {
+public interface EmployeeDAO {
 
     List<Employee> findAll();
     Employee findByID(int userID);
     Employee save(Employee employee);
     void deleteById(int userID);
+
 }

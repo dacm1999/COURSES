@@ -3,10 +3,7 @@ package com.dacm.springboot.cruddemo.controller;
 import com.dacm.springboot.cruddemo.entity.Employee;
 import com.dacm.springboot.cruddemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,17 @@ public class EmployeeRestController {
         }
 
         return  theEmployee;
+    }
+
+    @PostMapping("/employees")
+    public Employee addEmployee (@RequestBody Employee theEmployee){
+
+        //This is to force a save of a new item ... instedad of update
+        theEmployee.setId(0);
+
+        Employee dbEmployee = employeeService.save(theEmployee);
+        return dbEmployee;
+
+
     }
 }
