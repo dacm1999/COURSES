@@ -26,19 +26,19 @@ public class EmployeeRestController {
     }
 
     @GetMapping("/employees/{userID}")
-    public Employee getEmployee(@PathVariable int userID){
+    public Employee getEmployee(@PathVariable int userID) {
 
         Employee theEmployee = employeeService.findByID(userID);
 
-        if(theEmployee == null){
-            throw  new RuntimeException("Employee id not found " + userID);
+        if (theEmployee == null) {
+            throw new RuntimeException("Employee id not found " + userID);
         }
 
-        return  theEmployee;
+        return theEmployee;
     }
 
     @PostMapping("/employees")
-    public Employee addEmployee (@RequestBody Employee theEmployee){
+    public Employee addEmployee(@RequestBody Employee theEmployee) {
 
         //This is to force a save of a new item ... instedad of update
         theEmployee.setId(0);
@@ -48,9 +48,27 @@ public class EmployeeRestController {
     }
 
     @PutMapping("/employees")
-    public Employee updateEmployee (@RequestBody Employee theEmployee){
+    public Employee updateEmployee(@RequestBody Employee theEmployee) {
 
         Employee dbEmoployee = employeeService.save(theEmployee);
         return dbEmoployee;
+    }
+
+    // add mapping for DELETE /employees/{employeeId} - delete employee
+
+    @DeleteMapping("/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+
+        Employee tempEmployee = employeeService.findByID(employeeId);
+
+        // throw exception if null
+
+        if (tempEmployee == null) {
+            throw new RuntimeException("Employee id not found - " + employeeId);
+        }
+
+        employeeService.deleteById(employeeId);
+
+        return "Deleted employee id - " + employeeId;
     }
 }
