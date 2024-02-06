@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -14,29 +15,32 @@ import org.springframework.security.web.SecurityFilterChain;
 public class DemoSecurityConfig {
 
     @Bean
-    public InMemoryUserDetailsManager userDetailsManager (){
+    public InMemoryUserDetailsManager userDetailsManager() {
 
-        UserDetails nicole = User.builder()
+        UserDetails john = User.builder()
                 .username("nicole")
-                .password("admin")
+                .password("{noop}test123")
                 .roles("EMPLOYEE")
                 .build();
-        UserDetails luis = User.builder()
+
+        UserDetails mary = User.builder()
                 .username("luis")
-                .password("{noop}12345")
+                .password("{noop}test123")
                 .roles("EMPLOYEE", "MANAGER")
                 .build();
-        UserDetails daniel = User.builder()
-                .username("dacm")
-                .password("{noop}12345")
+
+        UserDetails susan = User.builder()
+                .username("daniel")
+                .password("{noop}test123")
                 .roles("EMPLOYEE", "MANAGER", "ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(nicole, luis, daniel);
+        return new InMemoryUserDetailsManager(john, mary, susan);
     }
 
     @Bean
-    SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+
         http.authorizeHttpRequests(configurer ->
                 configurer
                         .requestMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
@@ -46,14 +50,14 @@ public class DemoSecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN")
         );
 
-        //USE HTTP BASIC AUTHENTICATION
+        // use HTTP Basic authentication
         http.httpBasic(Customizer.withDefaults());
 
-        //DISABLE CROSS SITE REQUEST FORGERY (CSRF)
-        //IN GENERAL, NO REQUIRED FOR STATALES REST APIS, THAT USE POST , PUT, DELETE AND/OR PATCH
-        http.csrf(csrf -> csrf.disable());
+        // disable Cross Site Request Forgery (CSRF)
+        // in general, not required for stateless REST APIs that use POST, PUT, DELETE and/or PATCH
+        http.csrf(AbstractHttpConfigurer::disable);
 
         return http.build();
-
     }
 }
+
