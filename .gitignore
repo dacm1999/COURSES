@@ -341,5 +341,6 @@ gradle-app.setting
 
 # Ignore 
 00-spring-boot-3-spring-6-hibernate-full-course/
+00-spring-boot-3-full-course
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,visualstudiocode,eclipse,macos,windows,linux,maven,gradle
