@@ -14,10 +14,7 @@ The student is confirme <span th:text="${student.country}"/>
 <br>
 Favorite Programming Language <span th:text="${student.favoriteLanguage}"/>
 <br>
-Favorite Operating Systems:
-<ul>
-    <li th:each="tempSystem : ${student.favoriteSystems}" th:text="${tempSystem}" />
-</ul>
+Favorite Operating System <span th:text="${student.favoriteSystems}"/>
 
 </body>
 </html>
