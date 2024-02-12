@@ -5,10 +5,10 @@ import jakarta.validation.constraints.Size;
 
 public class Customer {
 
-    @NotNull(message = "is required")
-    @Size(min = 1, message = "is required")
     private String firstName;
-    @NotNull(message = "is required")
+
+    @NotNull(message="is required")
+    @Size(min=1, message="is required")
     private String lastName = "";
 
     public String getFirstName() {
@@ -27,3 +27,4 @@ public class Customer {
         this.lastName = lastName;
     }
 }
+
