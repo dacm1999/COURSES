@@ -1,10 +1,10 @@
-package com.dacm.springboot.thymeleafdemo;
+package com.dacm.springdemo.mvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ThymeleafdemoApplicationTests {
+class ValidationdemoApplicationTests {
 
 	@Test
 	void contextLoads() {
