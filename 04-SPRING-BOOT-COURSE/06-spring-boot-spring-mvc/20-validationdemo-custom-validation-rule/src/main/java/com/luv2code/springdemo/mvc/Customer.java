@@ -1,5 +1,6 @@
 package com.luv2code.springdemo.mvc;
 
+import com.luv2code.springdemo.mvc.validation.CourseCode;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,5 +22,8 @@ public class Customer {
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "Only 5 chars/digits")
     private String postalCode;
+
+    @CourseCode(value = "DACM" , message = "Must starts with DACM")
+    private String courseCode;
 
 }
