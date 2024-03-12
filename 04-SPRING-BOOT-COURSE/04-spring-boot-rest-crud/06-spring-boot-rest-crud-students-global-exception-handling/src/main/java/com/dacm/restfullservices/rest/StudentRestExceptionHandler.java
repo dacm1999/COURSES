@@ -26,7 +26,8 @@ public class StudentRestExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler ResponseEntity<StudentErrorResponse> handleException (Exception exc){
+    @ExceptionHandler
+    public ResponseEntity<StudentErrorResponse> handleException (Exception exc){
 
         StudentErrorResponse error = new StudentErrorResponse();
         error.setStatus(HttpStatus.BAD_REQUEST.value());
