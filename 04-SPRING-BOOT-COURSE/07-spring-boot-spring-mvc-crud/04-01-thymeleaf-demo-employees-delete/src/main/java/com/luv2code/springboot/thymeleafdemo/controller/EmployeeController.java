@@ -52,6 +52,14 @@ public class EmployeeController {
 
     }
 
+    @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") int id){
+        //Delete the employee
+        Employee employee = employeeService.deleteById(id);
+        // Redirect to the employee list
+        return "employees/list-employees";
+    }
+
     @PostMapping("/save")
     public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
 

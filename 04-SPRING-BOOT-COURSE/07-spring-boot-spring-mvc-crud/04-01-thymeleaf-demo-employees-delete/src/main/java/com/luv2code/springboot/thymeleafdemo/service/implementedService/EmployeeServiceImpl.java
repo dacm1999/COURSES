@@ -47,8 +47,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void deleteById(int theId) {
+    public Employee deleteById(int theId) {
         employeeRepository.deleteById(theId);
+        return null;
     }
 }
 
