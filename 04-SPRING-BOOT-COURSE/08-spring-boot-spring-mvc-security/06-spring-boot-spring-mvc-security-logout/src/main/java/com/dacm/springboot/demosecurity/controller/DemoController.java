@@ -2,13 +2,14 @@ package com.dacm.springboot.demosecurity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LoginController {
+public class DemoController {
 
-    @GetMapping("/showMyLoginPage")
-    public String showMyLoginPage(){
+    @GetMapping("/")
+    public String showHome() {
 
-        return "fancy-login";
+        return "home";
     }
 }
