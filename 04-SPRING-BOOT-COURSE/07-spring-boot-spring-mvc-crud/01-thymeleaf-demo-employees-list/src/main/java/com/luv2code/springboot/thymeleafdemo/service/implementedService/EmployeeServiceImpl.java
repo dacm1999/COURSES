@@ -1,7 +1,8 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.luv2code.springboot.thymeleafdemo.service.implementedService;
 
-import com.luv2code.springboot.cruddemo.dao.EmployeeRepository;
-import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.luv2code.springboot.thymeleafdemo.repository.EmployeeRepository;
+import com.luv2code.springboot.thymeleafdemo.entity.Employee;
+import com.luv2code.springboot.thymeleafdemo.service.interfaceService.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
