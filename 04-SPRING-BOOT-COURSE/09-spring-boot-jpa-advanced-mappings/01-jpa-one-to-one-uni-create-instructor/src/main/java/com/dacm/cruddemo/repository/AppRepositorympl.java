@@ -4,19 +4,20 @@ import com.dacm.cruddemo.entity.Instructor;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Repository
 @RequiredArgsConstructor
-public class AppDaoImpl implements AppDAO{
+public class AppRepositorympl implements AppRepository {
 
     // define field for entity manager
     private EntityManager entityManager;
 
     // inject entity manager using constructor injection
     @Autowired
-    public AppDaoImpl(EntityManager entityManager) {
+    public AppRepositorympl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
