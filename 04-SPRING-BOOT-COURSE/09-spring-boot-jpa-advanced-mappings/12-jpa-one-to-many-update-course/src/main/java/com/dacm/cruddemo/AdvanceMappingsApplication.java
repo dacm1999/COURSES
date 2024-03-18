@@ -31,8 +31,20 @@ public class AdvanceMappingsApplication {
 			//createInstructorWithCourses(appDAO);
 			//findInstructorWithCourses(appDAO);
 			//findCoursesForInstructor(appDAO);
-			findInstructorWithCoursesJoinFetch(appDAO);
+			//findInstructorWithCoursesJoinFetch(appDAO);
+			updateInstructor(appDAO);
 		};
+	}
+
+	private void updateInstructor(AppDAOImpl appDAO) {
+		int id = 1;
+
+		Instructor instructor = appDAO.findInstructorById(id);
+		System.out.println("Updating instructor by id: " + id);
+		instructor.setEmail("danielcontreras_98@hotmail.com");
+		instructor.setLastName("Mejia");
+		appDAO.updateInstructor(instructor);
+		System.out.println("Done");
 	}
 
 	private void findInstructorWithCoursesJoinFetch(AppDAOImpl appDAO) {

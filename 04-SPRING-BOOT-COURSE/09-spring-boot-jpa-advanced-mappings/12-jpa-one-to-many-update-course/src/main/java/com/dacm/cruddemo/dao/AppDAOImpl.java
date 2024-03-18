@@ -56,6 +56,12 @@ public class AppDAOImpl implements AppDAO {
     }
 
     @Override
+    @Transactional
+    public void updateInstructor(Instructor instructor) {
+        entityManager.merge(instructor);
+    }
+
+    @Override
     public Instructor findInstructorByJoinFetch(int id) {
         // create query
         TypedQuery<Instructor> query = entityManager.createQuery(
