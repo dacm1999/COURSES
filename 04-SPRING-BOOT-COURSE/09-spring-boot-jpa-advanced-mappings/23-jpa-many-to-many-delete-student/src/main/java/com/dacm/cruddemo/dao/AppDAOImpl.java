@@ -103,6 +103,13 @@ public class AppDAOImpl implements AppDAO {
     }
 
     @Override
+    @Transactional
+    public void deleteStudentById(int id) {
+        Student tempStudent = entityManager.find(Student.class, id);
+        entityManager.remove(tempStudent);
+    }
+
+    @Override
     public Instructor findInstructorByJoinFetch(int id) {
         // create query
         TypedQuery<Instructor> query = entityManager.createQuery(

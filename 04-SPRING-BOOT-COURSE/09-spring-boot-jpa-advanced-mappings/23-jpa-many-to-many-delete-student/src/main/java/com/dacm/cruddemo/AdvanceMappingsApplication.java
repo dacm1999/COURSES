@@ -25,8 +25,16 @@ public class AdvanceMappingsApplication {
 			//findCourseAndStudent(appDAO);
 			//findStudentAndCourses(appDAO);
 			//addMoreCoursesForStudents(appDAO);
-			deleteCourse(appDAO);
+			//deleteCourse(appDAO);
+			deleteStudent(appDAO);
 		};
+	}
+
+	private void deleteStudent(AppDAOImpl appDAO) {
+		int id = 1;
+		System.out.println("Deleting student by id " + id);
+		appDAO.deleteStudentById(id);
+		System.out.println("Done!");
 	}
 
 	private void addMoreCoursesForStudents(AppDAOImpl appDAO) {
