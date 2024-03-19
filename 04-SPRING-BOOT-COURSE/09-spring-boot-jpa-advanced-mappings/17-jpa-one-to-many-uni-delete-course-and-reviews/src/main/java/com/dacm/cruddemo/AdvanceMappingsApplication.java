@@ -24,17 +24,9 @@ public class AdvanceMappingsApplication {
 	public CommandLineRunner commandLineRunner(AppDAOImpl appDAO) {
 
 		return runner -> {
-			//createCourseAndReview(appDAO);
-			retrieveCourseAndReviews(appDAO);
-		};
-	}
+			createCourseAndReview(appDAO);
 
-	private void retrieveCourseAndReviews(AppDAOImpl appDAO) {
-		int id = 11;
-		Course tempCourse = appDAO.findCourseAndReviewById(id);
-		System.out.println(tempCourse);
-		System.out.println(tempCourse.getReviews());
-		System.out.println("Done!");
+		};
 	}
 
 	private void createCourseAndReview(AppDAOImpl appDAO) {
