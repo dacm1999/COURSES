@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
+//@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
 class DemoUtilsTest {
 
 
@@ -31,7 +31,24 @@ class DemoUtilsTest {
 
         assertNull(demoUtils.checkNull(str1), "Object should be null");
         assertNotNull(demoUtils.checkNull(str2), "Object should n be null");
+    }
 
+    @Test
+    @DisplayName("Same and NotSame")
+    void testSameAndNotSame(){
+        String str = "luv2code";
+        assertSame(demoUtils.getAcademy(),demoUtils.getAcademyDuplicate(), "Objects should refer to same object");
+        assertNotSame(str,demoUtils.getAcademyDuplicate(), "Objects should not refer to same object");
+    }
+
+    @Test
+    @DisplayName("True or false")
+    void testTrueOrFalse(){
+        int grandeOne = 10;
+        int gradeTwo = 5;
+
+        assertTrue(demoUtils.isGreater(grandeOne,gradeTwo),"This should return true");
+        assertFalse(demoUtils.isGreater(gradeTwo,grandeOne),"This should return false");
     }
 
 
